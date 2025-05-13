@@ -54,6 +54,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+
+
 //React Element
 const heading=(
     <h1 className="head" tabIndex="5">
@@ -74,16 +76,17 @@ const Title=()=>(
 
 const HeadingComponent=()=>(
     <div id="container">
-        <Title/>  
+        <p>Element inside component below: </p>
+         {heading}
+        {100+300}
+        <p>Component inside component below 3 lines: </p>
+         <Title/> 
+         <Title></Title> 
+         {Title()}
         {/* component com position */}
     <h1 className="heading">Namaste React Functional component</h1>
     </div>
 );
-
-
-
-
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent/>);
