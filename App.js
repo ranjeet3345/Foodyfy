@@ -43,6 +43,8 @@ const styleCard={
     backgroundColor:"#f0f0f0",
 }
 
+
+
 const RestaurantCard=()=>{
     return (
         <div className="res-card" style={{backgroundColor:"#f0f0f0",}}>
@@ -78,7 +80,7 @@ const Body=()=>{
                 <RestaurantCard/>
                 <RestaurantCard/>
 
-                
+
                 
                                 
 
