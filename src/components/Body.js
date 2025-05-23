@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
-import setListOfRestaurant from "../utils/mockData"
+
 import resList from "../utils/mockData";
 
 
