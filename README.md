@@ -50,3 +50,11 @@ import {component} from "path"
 
 q: can I both in one file
 -->
+
+
+
+#Hooks 
+Normal JS utility function
+many types of Hooks:
+-> useState()=Superpowerful react variable
+->useEffect() 
