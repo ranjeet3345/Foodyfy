@@ -58,3 +58,8 @@ Normal JS utility function
 many types of Hooks:
 -> useState()=Superpowerful react variable
 ->useEffect() 
+
+
+# Two Type of routing in web pages
+->client side routing
+->server side routing

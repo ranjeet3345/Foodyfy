@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
 import Shimmer  from "./Shimmer";
+import {Link} from "react-router-dom"
 
 
 
@@ -22,9 +23,8 @@ const Body=()=>{
     
 
     const fetchData = async () => {
-      const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6317296&lng=76.99166749999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
+        let url =  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6317296&lng=76.99166749999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      const data = await fetch( url);
 
     const json = await data.json();
 
@@ -36,9 +36,7 @@ const Body=()=>{
 
     
     //conditional rendering
-    if(ListOfRestaurant.length==0){
-        return <Shimmer/> ;
-    }
+
    
 
     // whenever state variable update, react trigger a reconcilation cycle(re-render )
@@ -98,7 +96,7 @@ const Body=()=>{
 
     
 
-    return ListOfRestaurant.length==0? <Shimmer/>:(
+    return !ListOfRestaurant?.length ? <Shimmer/>:(
         <div className="body">
             <div className="filter">
                 <div className="search" >
@@ -130,7 +128,14 @@ const Body=()=>{
             </div>
                <div className="res-container">
                 {
-                filteredRestaurant.map((restaurant)=>( <RestaurantCard key={restaurant.info.id} resData={restaurant}/> 
+                filteredRestaurant.map((restaurant)=>(
+                <Link
+                    key={restaurant.info.id}
+                    to={"/restaurants/"+restaurant.info.id}
+                     > 
+                     <RestaurantCard resData={restaurant}
+                     /> 
+                </Link>
                 ))}                      
 
             </div>
